@@ -1,26 +1,26 @@
 import { useState, useEffect } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { movieData } from './data/movieData.js'
+import { movieData } from './movieData.js'
 import './App.css'
 
-// 画像のインポート
-import moviePoster from './assets/movie_poster.png'
-import silas from './assets/Whisk_7485f63a68.jpg'
-import lily from './assets/Whisk_23038efb10.jpg'
-import finalImage from './assets/Whisk_29b4f2f9a9(1).jpg'
+// 画像の参照（Vercel ではプロジェクト直下が公開ルートになる）
+const moviePoster = '/movie_poster.png'
+const silas = '/Whisk_7485f63a68.jpg'
+const lily = '/Whisk_23038efb10.jpg'
+const finalImage = '/Whisk_29b4f2f9a9(1).jpg'
 
-// ギャラリー画像のインポート
-import gallery1 from './assets/Whisk_863fa235a7.jpg'
-import gallery2 from './assets/Whisk_23038efb10.jpg'
-import gallery3 from './assets/Whisk_37244681b5.jpg'
-import gallery4 from './assets/Whisk_a018b30164.jpg'
-import gallery5 from './assets/Whisk_aa1c87d0a9.jpg'
-import gallery6 from './assets/Whisk_fce51168fd.jpg'
-import gallery7 from './assets/Whisk_7485f63a68.jpg'
-import gallery8 from './assets/Whisk_33f2356854.jpg'
-import gallery9 from './assets/Whisk_29b4f2f9a9(1).jpg'
-
-const galleryImages = [gallery1, gallery2, gallery3, gallery4, gallery5, gallery6, gallery7, gallery8, gallery9]
+// ギャラリー画像の配列
+const galleryImages = [
+  '/Whisk_863fa235a7.jpg',
+  '/Whisk_23038efb10.jpg',
+  '/Whisk_37244681b5.jpg',
+  '/Whisk_a018b30164.jpg',
+  '/Whisk_aa1c87d0a9.jpg',
+  '/Whisk_fce51168fd.jpg',
+  '/Whisk_7485f63a68.jpg',
+  '/Whisk_33f2356854.jpg',
+  '/Whisk_29b4f2f9a9(1).jpg'
+]
 
 function App() {
   const { scrollYProgress } = useScroll()
